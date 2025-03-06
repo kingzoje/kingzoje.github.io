@@ -210,6 +210,7 @@ footer a:hover {
     main {
         width: 90%;
         margin: 0 auto;
+        zoom: .9
     }
     section {
         padding: 15px 20px;
