@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Imoukhuede | Jumpy Bugs</title>
+    <title>Jumpy Bugs</title>
     <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -44,7 +44,6 @@ var loadingProgress = document.querySelector('.loading-progress');
 
 loadingProgress.style.width = '0%';
 
-var loadingMessage = document.querySelector('.loading-message');
 var loadingBar=document.querySelector('.loading-bar');
 
 var script = document.createElement("script");
@@ -54,7 +53,6 @@ var script = document.createElement("script");
           loadingProgress.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-            loadingMessage.style.display="none";
         }).catch((message) => {
           alert(message);
         });
