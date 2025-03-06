@@ -213,7 +213,7 @@ footer a:hover {
         zoom: .9
     }
     section {
-        padding: 15px 20px;
+        padding: 10px 15px;
     }
     .projects-container, .experience-container, .skills-container {
         grid-template-columns: 1fr;
