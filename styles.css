@@ -214,7 +214,6 @@ footer a:hover {
     }
     section {
         padding: 15px 20px;
-        margin: 20px auto;
     }
     .projects-container, .experience-container, .skills-container {
         grid-template-columns: 1fr;
