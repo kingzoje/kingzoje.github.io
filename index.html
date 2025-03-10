@@ -10,11 +10,13 @@
     function openModal(gameUrl) {
         document.getElementById("game-frame").src = gameUrl;
         document.getElementById("game-modal").style.display = "flex";
+        document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
         document.getElementById("game-modal").style.display = "none";
         document.getElementById("game-frame").src = "";
+        document.body.style.overflow = "";
     }
     </script>
 </head>
@@ -55,6 +57,11 @@
         <h2>Projects</h2>
         <div class="projects-container">
             <div class="project">
+                <h3>Jumpy Bugs</h3>
+                <p>A simple fun shoot 'em up game.</p>
+                <a href="#" onclick="openModal('projects/jumpy-bugs/index.html')">View</a>
+            </div>
+            <div class="project">
                 <h3>Zoje's Casino</h3>
                 <p>A RMG project with variety of online casino games.</p>
                 <a href="#" onclick="openModal('projects/zojes-casino/index.html')">View</a>
@@ -63,11 +70,6 @@
                 <h3>Words</h3>
                 <p>A collection of popular fun word games.</p>
                 <a href="#" onclick="openModal('projects/words/index.html')">View</a>
-            </div>
-            <div class="project">
-                <h3>Jumpy Bugs</h3>
-                <p>A simple fun shoot 'em up game.</p>
-                <a href="#" onclick="openModal('projects/jumpy-bugs/index.html')">View</a>
             </div>
         </div>
     </section>
