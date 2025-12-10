@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Jumpy Bugs</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+  <div class="loading">
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+  <script>
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/jumpy-bugs.loader.js";
+      const config = {
+        dataUrl: buildUrl + "/jumpy-bugs.data.unityweb",
+        frameworkUrl: buildUrl + "/jumpy-bugs.framework.js.unityweb",
+        codeUrl: buildUrl + "/jumpy-bugs.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Imoukhuede",
+        productName: "Jumpy Bugs",
+        productVersion: "1.0",
+      };
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+      }
+    
+var loadingProgress = document.querySelector('.loading-progress');
+
+loadingProgress.style.width = '0%';
+
+var loadingBar=document.querySelector('.loading-bar');
+
+var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          loadingProgress.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+  </script>
+</body>
+</html>
